@@ -15,10 +15,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <NextTopLoader color="#20B15A"speed={200}/>
+     <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+      </head>
+
+      <body className={inter.className}>
       <Navbar/>
-      <body className={inter.className}>{children}</body>
-      <Footer/>
+      <NextTopLoader color="#20B15A"speed={200}/>
+        {children}
+        <Footer/>
+
+        </body>
     </html>
   )
 }
