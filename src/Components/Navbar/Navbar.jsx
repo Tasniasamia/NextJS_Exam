@@ -1,9 +1,12 @@
+"use client"
 import Link from 'next/link';
 import React from 'react';
 import './Navbar.css'
+import { useRouter } from 'next/navigation';
 const Navbar = () => {
+  const router=useRouter()
     return (
-        <div className='lg:px-[100px] bg_gradient '>
+        <div className={`lg:px-[100px] bg_gradient  `}>
             <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
@@ -17,8 +20,8 @@ const Navbar = () => {
       <li><Link href="/Service"className=' p-[10px] text-[16px] text-black font-medium'>Services</Link></li>
       <li><Link href="/Project"className=' p-[10px] text-[16px] text-black font-medium'>Projects</Link></li>
       <li><Link href="/Testimonial"className=' p-[10px] text-[16px] text-black font-medium'>Testimonials</Link></li>
-      <li><Link href="/Login"className=' p-[10px] text-center text-[16px] text-black font-medium border border-[#20B15A] border-1 '>Login</Link></li>
-      <li><Link href="/Resister"className=' text-center p-[10px] text-[16px] text-white font-medium bg-[#20B15A]  mt-[10px]'>Resister</Link></li>
+      <li><Link href="/Login"className='rounded-lg p-[10px] text-center text-[16px] text-black font-medium border border-[#20B15A] border-1 '>Login</Link></li>
+      <li><Link href="/Resister"className='rounded-lg text-center p-[10px] text-[16px] text-white font-medium bg-[#20B15A]  mt-[10px]'>Resister</Link></li>
       </ul>
       </ul>
     </div>
@@ -32,8 +35,8 @@ const Navbar = () => {
       <li><Link href="/Service"className='ms-[40px] p-[10px] text-[16px] text-black font-medium'>Services</Link></li>
       <li><Link href="/Project"className='ms-[40px] p-[10px] text-[16px] text-black font-medium'>Projects</Link></li>
       <li><Link href="/Testimonial"className='ms-[40px] p-[10px] text-[16px] text-black font-medium'>Testimonials</Link></li>
-      <li><Link href="/Login"className='ms-[40px] p-[10px] text-[16px] text-black font-medium border border-1 border-[#20B15A] '>Login</Link></li>
-      <li><Link href="/Resister"className='ms-[40px] p-[10px] text-[16px] text-white font-medium bg-[#20B15A] '>Resister</Link></li>
+      <li><Link href="/Login"className='rounded-lg ms-[40px] p-[10px] text-[16px] text-black font-medium border border-1 border-[#20B15A] '>Login</Link></li>
+      <li><Link href="/Resister"className='rounded-lg ms-[40px] p-[10px] text-[16px] text-white font-medium bg-[#20B15A] '>Resister</Link></li>
 
     </ul>
   </div>
