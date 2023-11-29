@@ -19,7 +19,7 @@ const Services = async() => {
                 data.map((item,index)=>{
                     return (
 
-            <div key={index} className='bg_custom lg:pt-[40px] pt-[20px] px-2 lg:px-[30px]'>
+            <div key={index} className='bg_custom lg:py-[40px] py-[20px] px-2 lg:px-[30px]'>
             <h1 className='lg:text-[26px] text-[14px] text-black lg:mb-[20px] mb-[10px] font-bold'>{item.title}</h1>
             <p className='lg:text-[16px] text-[12px] text-[#9D9D9D] lg:w-[500px]'>{item.des}</p>
             {/* for web view */}
