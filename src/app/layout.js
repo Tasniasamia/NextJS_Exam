@@ -23,8 +23,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-      <Navbar/>
       <NextTopLoader color="#20B15A"speed={200}/>
+      <Navbar/>
+
         {children}
         <Footer/>
 

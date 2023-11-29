@@ -32,7 +32,7 @@ const Banner = async() => {
           
             {/* section-right for web */}
         <div className='lg:block hidden flex-1'>  
-        <div className='flex flex-row-reverse  gap-3 mb-3'>
+           <div className='flex flex-row-reverse  gap-3 mb-3'>
             <Image src={data?.image1} alt="data" width={200} height={20} className='rounded-lg'/>
             <Image src={data?.image2} alt="data" width={300} height={20} className='rounded-lg'/>
             </div>
