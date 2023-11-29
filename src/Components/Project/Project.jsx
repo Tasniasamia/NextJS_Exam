@@ -15,7 +15,7 @@ const Project =async() => {
 
         <div className='lg:py-[67px] py-[20px] lg:px-[105px] px-2'>
         <Section_Header work="ALL PROJECT"text="Better Agency/SEO Solution At Your Fingertips"/>
-        <div className='lg:pt-[50px] pt-[20px] grid lg:grid-cols-2 grid-cols-1 lg:gap-20 gap-6 justify-items-center lg:justify-items-start '>
+             <div className='lg:pt-[50px] pt-[20px] grid lg:grid-cols-2 grid-cols-1 lg:gap-20 gap-6 justify-items-center lg:justify-items-start '>
             {
                 dataAll.map((item,index)=>{
                return (
