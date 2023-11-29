@@ -29,7 +29,6 @@ const Navbar = () => {
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className="flex">
-      
       <li><Link href="/" className=' p-[10px] text-[16px] text-black font-medium'>Home</Link></li>
       <li><Link href="/Team"className='ms-[40px] p-[10px] text-[16px] text-black font-medium'>Team</Link></li>
       <li><Link href="/Service"className='ms-[40px] p-[10px] text-[16px] text-black font-medium'>Services</Link></li>

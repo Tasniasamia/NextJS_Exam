@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='lg:px-[116px] px-4 bg-black text-white lg:pt-[57px] pt-[25px] pb-[21px] '>
+  <div className='lg:px-[116px] px-4 bg-black text-white lg:pt-[57px] pt-[25px] pb-[21px] '>
 <div className='lg:flex flex-column justify-between items-start'>
 <div>
 <h1 className='lg:text-[39.2px] text-[20px] text-white '>WEB LOGO</h1>
@@ -27,7 +27,6 @@ const Footer = () => {
 </div>
 </div>
 </div>
-
 <div className='lg:pt-0 pt-[25px]'>
 <h1 className='text-[20px] font-bold mb-[16px]'>Quick Links</h1>
 <p className='lg:text-[18px] text-[12px] text-white mb-[25px]'>Services</p>
