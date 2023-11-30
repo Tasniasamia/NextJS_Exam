@@ -23,7 +23,6 @@ const page = () => {
             <Common routeName={"Team"}/>
             <Team/>
             <Other/>
-            
         </div>
     );
 };

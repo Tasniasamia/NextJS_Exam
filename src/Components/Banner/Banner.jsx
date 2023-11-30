@@ -42,8 +42,8 @@ const Banner = async() => {
             </div>
         </div>
             {/* section-right for mobile */}
-            </div>
-            <div className='lg:hidden grid grid-cols-1 gap-6 py-[20px] justify-items-center'>
+        </div>
+<div className='lg:hidden grid grid-cols-1 gap-6 py-[20px] justify-items-center'>
     <Image src={data?.image1} alt="data" width={100} height={100} className='rounded-lg w-full h-[200px]'/>
     <Image src={data?.image2} alt="data" width={100} height={100} className='rounded-lg w-full h-[200px]'/>
     <Image src={data?.image3} alt="data" width={100} height={100} className='rounded-lg w-full h-[200px]'/>

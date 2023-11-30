@@ -3,7 +3,8 @@ import React from 'react';
 const Banner=dynamic(()=>import ('@/Components/Banner/Banner'));
 const WorkList=dynamic(()=>import ('@/Components/WorkList/WorkList'));
 const Other=dynamic(()=>import ('@/Components/Other/Other'));
-const StatList=dynamic(()=>import ('@/Components/StatList/StatList'))
+const StatList=dynamic(()=>import ('@/Components/StatList/StatList'));
+const Feature_Project = dynamic (()=> import ('@/Components/Feature_Project/Feature_Project'))
 export const generateMetadata=async()=>{
    const response=await fetch(process.env.BASE_URL+"/api/SiteMeta/home");
    const data=await response.json();
@@ -23,6 +24,7 @@ const page = () => {
       <Banner/>
       <WorkList/>
       <StatList/>
+      <Feature_Project/>
       <Other/>
     </div>
   );
