@@ -1,0 +1,151 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// model users {
+//   id Int @id @default(autoincrement())
+//   name String
+//   password String
+//   customers customers[]
+// }
+// model customers{
+//   id Int @id @default(autoincrement())
+//   user_id Int
+//   name String
+//   users users @relation(fields: [user_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  
+// }
+
+model users {
+  id Int @id @default(autoincrement())
+  user_name String 
+  user_email String 
+  password String
+  role String
+  students students[]
+  mentors mentors[]
+  admin admin?
+  courses courses[]
+}
+model students{
+  id Int @id @default(autoincrement())
+  user_name String
+  user_id Int
+  users users @relation(fields:[user_id],references: [id],onDelete:Restrict,onUpdate: Cascade)
+  courses courses[]
+EnrolledCourse EnrolledCourse[]
+enrollDetails enrollDetails[]
+paymentDetails paymentDetails[]
+}
+model mentors{
+  id Int @id @default(autoincrement())
+  user_name String
+  user_id Int
+  users users @relation(fields:[user_id],references: [id],onDelete:Restrict,onUpdate: Cascade)
+  courses courses[]
+  mentorCourse mentorCourse[]
+  userEnrolledMentor userEnrolledMentor[]
+}
+model admin{
+  id Int @id @default(autoincrement())
+  user_name String
+  user_id Int @unique
+  users users @relation(fields:[user_id],references: [id],onDelete:Restrict,onUpdate: Cascade)
+  courses courses[]
+  totalUsers totalUsers[]
+  totalCourse totalCourse[]
+}
+
+model courses{
+  id Int @id @default(autoincrement())
+  course_name String
+  course_price Int 
+  description String
+  duration String
+  user_id Int @unique
+  users users @relation(fields:[user_id],references: [id],onDelete:Restrict,onUpdate: Cascade)
+  student_id Int
+  students students @relation(fields:[student_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  mentors_id Int
+  mentors mentors @relation(fields: [mentors_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  admins_id Int
+  admin admin @relation(fields: [admins_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+}
+model totalUsers{
+  id Int @id @default(autoincrement())
+  name String
+  role String
+  coures_number Int
+  admin_id Int
+  admin admin @relation(fields: [admin_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+
+}
+
+model totalCourse{
+  id Int @id @default(autoincrement())
+  approved_course Int
+  denied_course Int
+  pending_course Int
+  admin_id Int
+  admin admin @relation(fields: [admin_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+  
+}
+
+model mentorCourse{
+  id Int @id @default(autoincrement())
+  course_name String
+  course_number Int
+  course_prices Int
+  mentor_id Int
+  mentors mentors @relation(fields: [mentor_id], references: [id],onDelete: Restrict,onUpdate: Cascade)
+}
+
+model userEnrolledMentor{
+    id Int @id @default(autoincrement())
+  course_name String
+  course_price Int
+  mentor_id Int
+  mentors mentors @relation(fields: [mentor_id], references: [id],onDelete: Restrict,onUpdate: Cascade)
+}
+
+model EnrolledCourse{
+  id Int @id @default(autoincrement())
+  course_name String
+  course_price Int
+  duration String
+  student_id Int
+students students @relation(fields: [student_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+
+}
+
+model enrollDetails{
+    id Int @id @default(autoincrement())
+    enroll_id Int
+    payment_type String
+    total_amount Int
+    enroll_at_system DateTime @db.DateTime()
+  student_id Int
+students students @relation(fields: [student_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+ paymentDetails paymentDetails[]   
+}
+
+model paymentDetails{
+    id Int @id @default(autoincrement())
+    enroll_id Int
+    enrollDetails enrollDetails @relation(fields: [enroll_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+    payment_type String
+    total_amount Int
+    status String
+    enroll_at_system DateTime @db.DateTime()
+    student_id Int
+    students students @relation(fields: [student_id],references: [id],onDelete: Restrict,onUpdate: Cascade)
+    
+}
